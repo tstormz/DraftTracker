@@ -25,3 +25,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Project specific
+loader.rb
+scraper.rb
+tiers.json
