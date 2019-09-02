@@ -6,10 +6,12 @@ export class TiersView extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			pickedPlayers: props.players.map(p => false)
+			pickedPlayers: props.players.map(p => false),
+			collapseOverride: false
 		};
 		this.updatePicks = this.updatePicks.bind(this);
 		this.everyonePicked = this.everyonePicked.bind(this);
+		this.override = this.override.bind(this);
 	}
 
 	updatePicks(i) {
@@ -23,6 +25,12 @@ export class TiersView extends React.Component {
 	everyonePicked() {
 		return this.state.pickedPlayers.reduce((allPicked, pick) => {
 			return allPicked && pick;
+		}) && !this.state.collapseOverride;
+	}
+
+	override() {
+		this.setState({
+			collapseOverride: !this.state.collapseOverride
 		});
 	}
 
@@ -40,8 +48,11 @@ export class TiersView extends React.Component {
 			<table className='table'>
 				<thead className='thead-dark'>
 					<tr>
-						<th colSpan='4'>
+						<th colSpan='3'>
 							Tier { this.props.tier }
+						</th>
+						<th>
+							<input type='checkbox' checked={this.state.collapseOverride} onChange={this.override} />
 						</th>
 					</tr>
 					</thead>
