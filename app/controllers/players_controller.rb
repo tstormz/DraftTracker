@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
 	end
 
 	def create
-		player = params.require(:player).permit(:tier, :name, :position, :team)
+		player = params.require(:player).permit(:tier, :name, :position, :team, :bye)
 		Player.create!(player)
 	end
 end
