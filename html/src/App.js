@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import { TiersView } from './components/TiersView';
+import { DraftManager } from './components/DraftManager';
 
 function App() {
   return (
     <div className="App">
-      <TiersView />
+      <DraftManager />
     </div>
   );
 }
