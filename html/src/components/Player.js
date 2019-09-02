@@ -14,6 +14,7 @@ export class Player extends React.Component {
 		this.setState({
 			picked: !this.state.picked
 		});
+		this.props.updateTier(this.props.order);
 	}
 
 	render() {

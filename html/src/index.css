@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-.wtf {
-  min-width: '100px';
-  background-color: '#000';
+input[type='checkbox'] {
+  transform: scale(1.5);
 }
