@@ -39,16 +39,18 @@ export class TiersView extends React.Component {
 		const players = this.props.players.map(
 			player => <Player name={player.name} 
 												team={player.team} 
-												position={player.position} 
+												position={player.position}
+												bye={player.bye}
 												updateTier={this.updatePicks}
 												key={player.name}
 												order={i++}
+												onPick={this.props.onPick}
 			/>);
 		return (
 			<table className='table'>
 				<thead className='thead-dark'>
 					<tr>
-						<th colSpan='3'>
+						<th colSpan='4'>
 							Tier { this.props.tier }
 						</th>
 						<th>

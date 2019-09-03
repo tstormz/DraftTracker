@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -14,4 +13,12 @@ code {
 
 input[type='checkbox'] {
   transform: scale(1.5);
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.pickCounter {
+  padding: 10px;
 }

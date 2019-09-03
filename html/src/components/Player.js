@@ -11,10 +11,12 @@ export class Player extends React.Component {
 	}
 
 	handleChecked() {
+		const picked = !this.state.picked;
 		this.setState({
-			picked: !this.state.picked
+			picked: picked
 		});
 		this.props.updateTier(this.props.order);
+		this.props.onPick(picked);
 	}
 
 	render() {
@@ -31,6 +33,9 @@ export class Player extends React.Component {
 				</td>
 				<td>
 					{ this.props.position }
+				</td>
+				<td>
+					Bye { this.props.bye }
 				</td>
 			</tr>
 		);
