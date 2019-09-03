@@ -8,6 +8,7 @@ export class Player extends React.Component {
 			picked: false
 		};
 		this.handleChecked = this.handleChecked.bind(this);
+		this.canShow = this.canShow.bind(this);
 	}
 
 	handleChecked() {
@@ -19,9 +20,13 @@ export class Player extends React.Component {
 		this.props.onPick(picked);
 	}
 
+	canShow() {
+		return this.props.filter === 'none' || this.props.filter === this.props.position;
+	}
+
 	render() {
 		return (
-			<tr>
+			<tr style={{ display: this.canShow() ? 'table-row' : 'none' }}>
 				<td>
 					<input type='checkbox' onChange={ this.handleChecked }/>
 				</td>

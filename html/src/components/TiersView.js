@@ -45,6 +45,7 @@ export class TiersView extends React.Component {
 												key={player.name}
 												order={i++}
 												onPick={this.props.onPick}
+												filter={this.props.filter}
 			/>);
 		return (
 			<table className='table'>

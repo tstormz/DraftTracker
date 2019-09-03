@@ -22,3 +22,11 @@ input[type='checkbox'] {
 .pickCounter {
   padding: 10px;
 }
+
+ul {
+  padding-top: 50px;
+}
+
+li {
+  list-style-type: none;
+}
